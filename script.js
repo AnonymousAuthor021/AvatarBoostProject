@@ -28,21 +28,3 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   });
   show(0);
 });
-
-const copyButton = document.querySelector("[data-copy-bibtex]");
-const copyStatus = document.querySelector("[data-copy-status]");
-
-copyButton?.addEventListener("click", async () => {
-  const citation = document.querySelector("#bibtex")?.innerText ?? "";
-  try {
-    await navigator.clipboard.writeText(citation);
-    copyStatus.textContent = "Citation copied.";
-    copyButton.textContent = "Copied";
-  } catch {
-    copyStatus.textContent = "Select the citation and copy it manually.";
-  }
-  window.setTimeout(() => {
-    copyButton.textContent = "Copy";
-    copyStatus.textContent = "";
-  }, 2400);
-});

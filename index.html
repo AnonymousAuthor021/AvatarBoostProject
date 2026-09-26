@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="AvatarBoost enhances 4D avatar videos with real-time diffusion restoration guided by reference images and facial landmarks."
+      content="AvatarBoost enhances rendered 4D avatar videos in real time using diffusion-based restoration guided by reference images and facial landmarks."
     />
-    <meta name="theme-color" content="#f7f8fa" />
+    <meta name="theme-color" content="#f8f7f3" />
     <title>AvatarBoost — Project Page</title>
     <link
       rel="icon"
@@ -26,17 +26,21 @@
           <a href="#abstract">Abstract</a>
           <a href="#method">Method</a>
           <a href="#results">Results</a>
-          <a href="#citation">Citation</a>
+          <a href="#comparison">Comparison</a>
+          <a href="#ablation">Ablation</a>
         </div>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero shell">
-        <p class="venue">RESEARCH PROJECT <span aria-hidden="true">/</span> 2027</p>
-        <h1>AvatarBoost: A Universal Real-Time Video Enhancement Model for 4D Avatarization</h1>
+        <p class="venue"><span aria-hidden="true">/</span> 2027</p>
+        <h1 aria-label="AvatarBoost: A Universal Real-Time Video Enhancement Model for 4D Avatarization">
+          <span class="hero-name">Avatar<em>Boost</em></span>
+          <span class="hero-subtitle">A Universal Real-Time Video Enhancement Model <span>for 4D Avatarization</span></span>
+        </h1>
         <p class="dek">
-          Render 4D avatar videos with enhanced realism and identity preservation in real time while maintaining multi-view consistency and expression accuracy.
+          AvatarBoost enhances rendered 4D avatar videos in real time, improving realism while preserving identity, expression, and multi-view consistency.
         </p>
 
         <div class="authors" aria-label="Authors">
@@ -45,14 +49,14 @@
 
         <div class="resource-links" aria-label="Project resources">
           <a class="pill primary" href="#results">Explore results <span aria-hidden="true">↓</span></a>
-          <a class="pill" href="">Project repository <span aria-hidden="true">↗</span></a>
+          <a class="pill" href="https://github.com/AnonymousAuthor021/AvatarBoostProject" target="_blank" rel="noopener noreferrer">Project repository <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
       <section class="teaser shell wide" aria-labelledby="teaser-title">
         <div class="section-heading compact">
           <p class="eyebrow">AT A GLANCE</p>
-          <h2 id="teaser-title">From coarse renders to lifelike video</h2>
+          <h2 id="teaser-title">How does AvatarBoost work?</h2>
         </div>
         <div class="media-frame hero-media">
           <video autoplay muted loop playsinline controls poster="assets/teaser-poster.jpg" aria-label="AvatarBoost overview video">
@@ -60,7 +64,7 @@
           </video>
         </div>
         <p class="caption">
-          AvatarBoost enhances portrait videos rendered by 4D avatars using reference images and facial landmark maps.
+          Reference images and facial landmark maps guide the enhancement of rendered 4D avatar videos.
         </p>
       </section>
 
@@ -71,14 +75,14 @@
         </div>
         <div class="prose">
           <p>
-High-quality 4D avatarization requires multi-view consistency, identity preservation, and faithful expression control, while meeting the efficiency demands of real-time applications. Geometry-based rendering offers multi-view consistency and motion control but can lack realism. Video diffusion can improve realism but is typically slow and does not inherently ensure multi-view or identity consistency. We introduce AvatarBoost, a general-purpose, real-time video enhancement model that leverages video diffusion to boost existing 4D avatarization methods.  Specifically, we refine the rendered videos through a diffusion-based restoration process guided by multiple reference images and facial landmark cues. The reference images provide complementary identity and appearance information, while landmark guidance helps preserve facial expressions and head motion. Together, these conditions guide the model to suppress rendering artifacts and recover fine details while maintaining identity consistency and motion fidelity. Finally, we distill the restoration model into a two-step generator using Distribution Matching Distillation (DMD), enabling real-time video enhancement. Experiments demonstrate that AvatarBoost improves visual realism and identity preservation while maintaining multi-view consistency and expression accuracy across diverse head motions and camera trajectories.
+            High-quality 4D avatarization requires multi-view consistency, identity preservation, and faithful expression control while meeting the efficiency demands of real-time applications. Geometry-based rendering provides multi-view consistency and motion control but can lack realism. Video diffusion can improve realism but is typically slow and does not inherently ensure multi-view or identity consistency. We introduce AvatarBoost, a general-purpose real-time video enhancement model that uses video diffusion to improve outputs from existing 4D avatarization methods. Specifically, it refines rendered videos through a diffusion-based restoration process guided by multiple reference images and facial landmarks. The reference images provide complementary identity and appearance cues, while landmark guidance helps preserve facial expressions and head motion. Together, these conditions guide the model to suppress rendering artifacts and recover fine details while maintaining identity consistency and motion fidelity. Finally, we distill the restoration model into a two-step generator using Distribution Matching Distillation (DMD) to enable real-time video enhancement. Experiments show that AvatarBoost improves visual realism and identity preservation while maintaining multi-view consistency and expression accuracy across diverse head motions and camera trajectories.
           </p>
           <div class="contributions">
             <strong>Key contributions</strong>
             <ul>
-              <li>We introduce AvatarBoost, a video enhancement model with a common rendered-video interface designed to accommodate different upstream 4D avatar models.</li>
-              <li>We develop a conditional video restoration model that combines coarse renders, multiple identity references, and landmark-derived facial masks to guide appearance enhancement.</li>
-              <li>We develop a few-step distillation scheme for avatar restoration using distribution matching and low-rank adaptation, targeting efficient inference and parameter-efficient training.</li>
+              <li>We introduce AvatarBoost, a video enhancement model with a shared rendered-video interface that accommodates different upstream 4D avatar models.</li>
+              <li>We develop a conditional restoration model that combines coarse renders, multiple identity references, and landmark-derived facial masks to guide appearance enhancement.</li>
+              <li>We develop a two-step distillation scheme for avatar restoration using distribution matching and low-rank adaptation to support efficient inference and parameter-efficient training.</li>
             </ul>
           </div>
         </div>
@@ -91,13 +95,13 @@ High-quality 4D avatarization requires multi-view consistency, identity preserva
             <h2>Method</h2>
           </div>
           <p>
-            AvatarBoost improves videos from different 4D avatar representations.
+            AvatarBoost enhances outputs from a range of 4D avatar representations.
           </p>
         </div>
         <figure class="method-figure">
-          <img src="assets/rendering_pipeline.svg" alt="AvatarBoost pipeline showing coarse avatar rendering, reference images and landmarks conditioning a two-step diffusion restoration model" loading="lazy" />
+          <img src="assets/rendering_pipeline.svg" alt="AvatarBoost pipeline showing a coarse avatar render, reference images, and landmarks conditioning a two-step diffusion restoration model" loading="lazy" />
           <figcaption>
-            An animatable avatar renders a coarse video under motion and camera controls. A context adapter conditions the video diffusion transformer on the render, reference images, and landmark maps. Two denoising steps and VAE decoding produce the enhanced video.
+            An animatable avatar produces a coarse video under controlled motion and camera viewpoints. A context adapter conditions the video diffusion transformer on the render, reference images, and landmark maps. Two denoising steps, followed by VAE decoding, produce the enhanced video.
           </figcaption>
         </figure>
       </section>
@@ -110,7 +114,7 @@ High-quality 4D avatarization requires multi-view consistency, identity preserva
               <h2>Results</h2>
             </div>
             <p>
-              Examples across multi-view and single-view avatar settings.
+              Representative examples from multi-view and single-view avatar settings.
             </p>
           </div>
 
@@ -120,19 +124,19 @@ High-quality 4D avatarization requires multi-view consistency, identity preserva
                 <video controls muted loop playsinline preload="metadata" poster="assets/result-01-poster.jpg">
                   <source src="media/result-01.mp4" type="video/mp4" />
                 </video>
-                <div class="slide-copy"><span>Self- and cross-reenactment in novel views</span><p>Nersemble · Multi-view</p></div>
+                <div class="slide-copy"><span>Self- and cross-reenactment from novel views</span><p>Nersemble · Multi-view</p></div>
               </article>
               <article class="slide" data-slide hidden>
                 <video controls muted loop playsinline preload="metadata" poster="assets/result-02-poster.jpg">
                   <source src="media/result-02.mp4" type="video/mp4" />
                 </video>
-                <div class="slide-copy"><span>Motion and point cloud illustration</span><p>VFHQ / Internet video · Single-view</p></div>
+                <div class="slide-copy"><span>Motion and point-cloud visualization for novel-view synthesis</span><p>VFHQ / Internet video · Single-view</p></div>
               </article>
               <article class="slide" data-slide hidden>
                 <video controls muted loop playsinline preload="metadata" poster="assets/result-03-poster.jpg">
                   <source src="media/result-03.mp4" type="video/mp4" />
                 </video>
-                <div class="slide-copy"><span>Enhancement across Gaussian backends: LAM and UIKA</span><p>VFHQ · Single-view</p></div>
+                <div class="slide-copy"><span>Enhancement with the LAM and UIKA Gaussian backends</span><p>VFHQ · Single-view</p></div>
               </article>
             </div>
             <div class="carousel-controls">
@@ -145,33 +149,55 @@ High-quality 4D avatarization requires multi-view consistency, identity preserva
               <button type="button" data-next aria-label="Next result">→</button>
             </div>
           </div>
-
-          
-
         </div>
       </section>
 
-      <section id="citation" class="paper-section shell prose-grid">
-        <div class="section-heading">
-          <p class="section-number">04</p>
-          <h2>BibTeX</h2>
+      <section id="comparison" class="paper-section video-section">
+        <div class="shell wide">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="section-number">04</p>
+              <h2>Comparison</h2>
+            </div>
+            <p>Side-by-side comparisons with established avatar methods and two rendering backends enhanced by AvatarBoost.</p>
+          </div>
+          <figure class="video-figure">
+            <div class="media-frame">
+              <video controls muted loop playsinline preload="metadata" poster="assets/comparison-poster.jpg" aria-label="AvatarBoost comparison video">
+                <source src="media/comparison.mp4" type="video/mp4" />
+                Your browser does not support MP4 video.
+              </video>
+            </div>
+            <figcaption>AvatarBoost-enhanced LAM and UIKA outputs are shown alongside HunyuanPortrait, Portrait4D-v2, and GAGAvatar.</figcaption>
+          </figure>
         </div>
-        <div class="bibtex-wrap">
-          <button class="copy-button" type="button" data-copy-bibtex>Copy</button>
-          <pre id="bibtex"><code>@inproceedings{author2027paper,
-  title     = {AvatarBoost: A Universal Real-Time Video Enhancement Model for 4D Avatarization},
-  author    = {Anonymous Authors},
-  booktitle = {Conference Name},
-  year      = {2027}
-}</code></pre>
-          <p class="copy-status" data-copy-status aria-live="polite"></p>
+      </section>
+
+      <section id="ablation" class="paper-section video-section ablation-section">
+        <div class="shell wide">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="section-number">05</p>
+              <h2>Ablation</h2>
+            </div>
+            <p>The effect of reference-image and landmark guidance on restoration quality.</p>
+          </div>
+          <figure class="video-figure">
+            <div class="media-frame">
+              <video controls muted loop playsinline preload="metadata" poster="assets/ablation-poster.jpg" aria-label="AvatarBoost ablation video">
+                <source src="media/ablation.mp4" type="video/mp4" />
+                Your browser does not support MP4 video.
+              </video>
+            </div>
+            <figcaption>Reference-image and landmark configurations compared with the full AvatarBoost model.</figcaption>
+          </figure>
         </div>
       </section>
     </main>
 
     <footer>
       <div class="shell footer-inner">
-        <p>AvatarBoost · Research project</p>
+        <p>AvatarBoost</p>
         <a href="#top">Back to top ↑</a>
       </div>
     </footer>
