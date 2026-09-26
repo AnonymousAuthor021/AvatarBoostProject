@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 620" role="img" aria-labelledby="title desc">
+  <title id="title">Method figure placeholder</title>
+  <desc id="desc">A four-stage pipeline from input through two model stages to output.</desc>
+  <rect width="1400" height="620" rx="28" fill="#fff"/>
+  <g font-family="Arial, sans-serif" fill="#14213d">
+    <text x="70" y="90" font-size="28" font-weight="700">METHOD FIGURE PLACEHOLDER</text>
+    <text x="70" y="132" font-size="20" fill="#536078">Export your paper figure as SVG, WebP, or PNG and replace this file.</text>
+  </g>
+  <g stroke="#14213d" stroke-width="3">
+    <rect x="70" y="230" width="230" height="180" rx="18" fill="#f4d35e"/>
+    <rect x="415" y="190" width="260" height="260" rx="18" fill="#ef8354"/>
+    <rect x="790" y="190" width="260" height="260" rx="18" fill="#6eb5a4"/>
+    <rect x="1165" y="230" width="170" height="180" rx="18" fill="#dfe6ef"/>
+    <path d="M300 320h95m280 0h95m280 0h95" fill="none"/>
+    <path d="m385 308 14 12-14 12m375-24 14 12-14 12m375-24 14 12-14 12" fill="none"/>
+  </g>
+  <g font-family="Arial, sans-serif" text-anchor="middle" fill="#14213d">
+    <text x="185" y="314" font-size="27" font-weight="700">Input</text>
+    <text x="185" y="348" font-size="18">image / video / signal</text>
+    <text x="545" y="304" font-size="27" font-weight="700">Stage 1</text>
+    <text x="545" y="340" font-size="18">feature extraction</text>
+    <text x="920" y="304" font-size="27" font-weight="700">Stage 2</text>
+    <text x="920" y="340" font-size="18">generation / refinement</text>
+    <text x="1250" y="314" font-size="27" font-weight="700">Output</text>
+    <text x="1250" y="348" font-size="18">final prediction</text>
+  </g>
+</svg>
