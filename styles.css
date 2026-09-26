@@ -190,8 +190,8 @@ button { font: inherit; }
   max-width: 680px;
   margin: 18px auto 0;
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.58;
   text-align: center;
   text-wrap: pretty;
 }
@@ -263,8 +263,8 @@ button { font: inherit; }
   max-width: 740px;
   margin: 16px auto 0;
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.58;
   text-align: center;
   text-wrap: pretty;
 }
@@ -291,8 +291,8 @@ button { font: inherit; }
   padding: 18px 24px;
   border-top: 1px solid rgba(255, 255, 255, .1);
 }
-.slide-copy span { font-size: 1rem; font-weight: 600; line-height: 1.45; }
-.slide-copy p { margin: 0; color: var(--dark-muted); font-size: .96rem; white-space: nowrap; }
+.slide-copy span { font-size: 1.1rem; font-weight: 600; line-height: 1.45; }
+.slide-copy p { margin: 0; color: var(--dark-muted); font-size: 1.02rem; white-space: nowrap; }
 .carousel-controls {
   display: flex;
   align-items: center;
@@ -343,8 +343,8 @@ button { font: inherit; }
   max-width: 720px;
   margin: 16px auto 0;
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.58;
   text-align: center;
   text-wrap: pretty;
 }
