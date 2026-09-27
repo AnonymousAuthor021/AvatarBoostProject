@@ -334,6 +334,24 @@ button { font: inherit; }
 .video-section .split-heading { margin-bottom: 42px; }
 .video-figure { margin: 0; }
 .video-figure .media-frame { box-shadow: 0 24px 60px rgba(37, 64, 56, .09); }
+.comparison-carousel .carousel-viewport {
+  border-color: var(--line);
+  background: var(--surface);
+  box-shadow: 0 24px 60px rgba(37, 64, 56, .09);
+}
+.comparison-carousel .slide-copy { border-top-color: var(--line); }
+.comparison-carousel .slide-copy p { color: var(--muted); }
+.comparison-carousel .carousel-controls > button {
+  color: var(--ink);
+  border-color: #a9bab2;
+}
+.comparison-carousel .carousel-controls > button:hover,
+.comparison-carousel .carousel-controls > button:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.comparison-carousel .dots button { background: #a9bab2; }
+.comparison-carousel .dots button.is-active { background: var(--accent); }
 .video-figure video {
   aspect-ratio: 16 / 9;
   object-fit: contain;

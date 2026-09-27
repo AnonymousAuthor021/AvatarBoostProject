@@ -124,7 +124,7 @@
                 <video controls muted loop playsinline preload="metadata" poster="assets/result-01-poster.jpg">
                   <source src="media/result-01.mp4" type="video/mp4" />
                 </video>
-                <div class="slide-copy"><span>Self- and cross-reenactment from novel views</span><p>Nersemble · Multi-view</p></div>
+                <div class="slide-copy"><span>Self- and cross-reenactment from novel views</span><p>NeRSemble · Multi-view</p></div>
               </article>
               <article class="slide" data-slide hidden>
                 <video controls muted loop playsinline preload="metadata" poster="assets/result-02-poster.jpg">
@@ -162,11 +162,43 @@
             <p>Side-by-side comparisons with established avatar methods and two rendering backends enhanced by AvatarBoost.</p>
           </div>
           <figure class="video-figure">
-            <div class="media-frame">
-              <video controls muted loop playsinline preload="metadata" poster="assets/comparison-poster.jpg" aria-label="AvatarBoost comparison video">
-                <source src="media/comparison.mp4" type="video/mp4" />
-                Your browser does not support MP4 video.
-              </video>
+            <div class="carousel comparison-carousel" data-carousel aria-label="AvatarBoost method comparisons">
+              <div class="carousel-viewport">
+                <article class="slide is-active" data-slide>
+                  <video controls muted loop playsinline preload="metadata" poster="assets/comparison-poster.jpg" aria-label="In-the-wild cross-reenactment comparison video">
+                    <source src="media/comparison.mp4" type="video/mp4" />
+                  </video>
+                  <div class="slide-copy"><span>In-the-wild cross-reenactment</span><p>Baseline methods and AvatarBoost</p></div>
+                </article>
+                <article class="slide" data-slide hidden>
+                  <video controls muted loop playsinline preload="metadata" poster="assets/comparison-02-poster.jpg" aria-label="NeRSemble self-reenactment comparison video">
+                    <source src="media/comparison-02.mp4" type="video/mp4" />
+                  </video>
+                  <div class="slide-copy"><span>NeRSemble self-reenactment</span><p>Baseline methods and AvatarBoost</p></div>
+                </article>
+                <article class="slide" data-slide hidden>
+                  <video controls muted loop playsinline preload="metadata" poster="assets/comparison-01-poster.jpg" aria-label="NeRSemble cross-reenactment comparison video">
+                    <source src="media/comparison-01.mp4" type="video/mp4" />
+                  </video>
+                  <div class="slide-copy"><span>NeRSemble cross-reenactment</span><p>Baseline methods and AvatarBoost</p></div>
+                </article>
+                <article class="slide" data-slide hidden>
+                  <video controls muted loop playsinline preload="metadata" poster="assets/comparison-03-poster.jpg" aria-label="VFHQ cross-reenactment comparison video">
+                    <source src="media/comparison-03.mp4" type="video/mp4" />
+                  </video>
+                  <div class="slide-copy"><span>VFHQ cross-reenactment</span><p>Baseline methods and AvatarBoost</p></div>
+                </article>
+              </div>
+              <div class="carousel-controls">
+                <button type="button" data-prev aria-label="Previous comparison">←</button>
+                <div class="dots" aria-label="Choose comparison">
+                  <button class="is-active" type="button" data-dot="0" aria-label="Show in-the-wild comparison"></button>
+                  <button type="button" data-dot="1" aria-label="Show NeRSemble self-reenactment comparison"></button>
+                  <button type="button" data-dot="2" aria-label="Show NeRSemble cross-reenactment comparison"></button>
+                  <button type="button" data-dot="3" aria-label="Show VFHQ cross-reenactment comparison"></button>
+                </div>
+                <button type="button" data-next aria-label="Next comparison">→</button>
+              </div>
             </div>
             <figcaption>AvatarBoost-enhanced LAM and UIKA outputs are shown alongside HunyuanPortrait, Portrait4D-v2, and GAGAvatar.</figcaption>
           </figure>
